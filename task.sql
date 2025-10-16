@@ -1,6 +1,6 @@
 CREATE DATABASE ShopDB;
 
-USE ShopBD;
+USE ShopDB;
 
 CREATE TABLE Products (
     ID INT AUTO_INCREMENT PRIMARY KEY,
@@ -24,7 +24,7 @@ CREATE TABLE Orders(
     Date DATE,
     FOREIGN KEY (CustomerID)
         REFERENCES Customers(ID)
-        ON DELENE SET NULL
+        ON DELETE SET NULL
 );
 
 CREATE TABLE OrderItems(
@@ -33,7 +33,7 @@ CREATE TABLE OrderItems(
     ProductID INT,
     FOREIGN KEY (OrderID)
         REFERENCES Orders(ID)
-        ON DELENE SET NULL,
+        ON DELETE SET NULL,
     FOREIGN KEY (ProductID)
         REFERENCES Products(ID)
         ON DELETE SET NULL
